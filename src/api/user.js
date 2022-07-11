@@ -2,7 +2,10 @@ import request from '@/utils/request'
 
 // 获取验证码接口
 const getCaptcha = () => {
-  return request({ url: '/captcha', method: 'GET' })
+  return request({
+    url: '/captcha',
+    method: 'GET'
+  })
 }
 
 // 登录接口
