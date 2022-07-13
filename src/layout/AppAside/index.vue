@@ -1,6 +1,9 @@
 <template>
   <div class="aside-container">
-    <el-menu default-active="0" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu background-color="#222d32"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      router>
       <el-menu-item index="0">
         <i class="el-icon-setting"></i>
         <span slot="title">控制台</span>
@@ -36,6 +39,9 @@ export default {
 
 <style lang="scss" scoped>
 .el-menu {
-  background-color: $aside-bg-color;
+  background-color: #1c2428;
+}
+.aside-container {
+  background-color: #1c2428;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    main
+    控制台222
   </div>
 </template>
 

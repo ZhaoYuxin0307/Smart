@@ -21,8 +21,10 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
   (response) => {
+    console.log(response)
     if (response.data.code === 200) {
-      return response.data.code
+      const { data } = response.data
+      return data
     }
     _showErrorMessage(response.data.code, response.data.msg)
   },

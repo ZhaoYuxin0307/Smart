@@ -39,7 +39,7 @@ export default {
 }
 
 .el-aside {
-  background-color: $aside-bg-color;
+  background-color: #1c2428;
   color: #333;
 }
 
