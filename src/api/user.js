@@ -4,37 +4,66 @@ import request from '@/utils/request'
  * 获取验证码接口
  * @returns {AxiosPromise}
  */
-// 获取验证码接口
 const getCaptcha = () => {
   return request({
     url: '/captcha',
-    method: 'get'
+    method: 'GET'
   })
 }
+
 /**
  * 登录接口
  * @param data
  * @returns {AxiosPromise}
  */
-// 登录接口
 const login = (data) => {
   return request({
-    url:
-      '/login?username=' +
-      data.username +
-      '&password=' +
-      data.password +
-      '&code=' +
-      data.code +
-      '&token=' +
-      data.token,
+    url: '/login?username=' + data.username + '&password=' + data.password + '&code=' + data.code + '&token=' + data.token,
     method: 'POST',
     data
   })
 }
 
-// 导出接口
+/**
+ * 获取用户信息接口
+ * @returns {AxiosPromise}
+ */
+const getUserInfo = () => {
+  return request({
+    url: '/user/info',
+    method: 'GET'
+  })
+}
+
+/**
+ * 获取用户权限接口
+ * @returns {AxiosPromise}
+ */
+const getPermissionList = () => {
+  return request({
+    url: '/menu/nav',
+    method: 'GET'
+  })
+}
+
+/**
+ * 退出登录接口
+ * @returns {AxiosPromise}
+ */
+const logout = () => {
+  return request({
+    url: '/logout',
+    method: 'POST'
+  })
+}
+
+/**
+ * 导出api接口
+ */
 export default {
   getCaptcha,
-  login
+  login,
+  getUserInfo,
+  getPermissionList,
+  logout
 }

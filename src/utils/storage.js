@@ -1,4 +1,8 @@
-// 本地存储数据
+/**
+ * 本地存储数据
+ * @param {*} key
+ * @param {*} value
+ */
 export const setItem = (key, value) => {
   if (typeof value === 'object') {
     value = JSON.stringify(value)
@@ -6,7 +10,11 @@ export const setItem = (key, value) => {
   localStorage.setItem(key, value)
 }
 
-// 获取本地存储的数据
+/**
+ * 获取本地存储数据
+ * @param {*} key
+ * @returns
+ */
 export const getItem = (key) => {
   const data = localStorage.getItem(key)
   try {
@@ -16,7 +24,10 @@ export const getItem = (key) => {
   }
 }
 
-// 删除单个本地存储的数据
+/**
+ * 删除单个本地存储的数据
+ * @param {*} key
+ */
 export const removeItem = (key) => {
   localStorage.removeItem(key)
 }

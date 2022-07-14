@@ -1,6 +1,11 @@
+// 导入axios
 import axios from 'axios'
+// 导入message消息提示组件
 import { Message } from 'element-ui'
+// 导入自定义消息提示
 import exceptionMessage from './exception-message'
+// 导入store
+import store from '@/store'
 
 // 创建axios实例对象
 const service = axios.create({
@@ -11,6 +16,10 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
+    const token = store.getters.token
+    if (token) {
+      config.headers.token = token
+    }
     return config
   },
   (error) => {

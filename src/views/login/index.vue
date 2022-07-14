@@ -3,21 +3,41 @@
     <h1>智慧服务平台</h1>
     <div class="login-form">
       <h2>欢迎登录</h2>
-      <el-form ref="form" :rules="rules" :model="loginForm" >
+      <el-form ref="form" :rules="rules" :model="loginForm">
         <el-form-item prop="username">
-          <el-input v-model.trim="loginForm.username" placeholder="请输入账号" suffix-icon="el-icon-user-solid"></el-input>
+          <el-input
+            v-model.trim="loginForm.username"
+            placeholder="请输入账号"
+            suffix-icon="el-icon-user-solid"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input type="password" clearable v-model.trim="loginForm.password" show-password placeholder="请输入密码" suffix-icon="el-icon-s-goods"></el-input>
+          <el-input
+            type="password"
+            clearable
+            v-model.trim="loginForm.password"
+            show-password
+            placeholder="请输入密码"
+            suffix-icon="el-icon-s-goods"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="code">
           <div class="verify">
-            <el-input v-model.trim="loginForm.code" placeholder="请输入验证码"></el-input>
+            <el-input
+              v-model.trim="loginForm.code"
+              placeholder="请输入验证码"
+            ></el-input>
             <el-image @click.stop="handleCodeRefresh" :src="codeImageUrl" />
           </div>
         </el-form-item>
         <el-form-item>
-          <el-button class="login-button" :loading="loadingStatus" @click="handleVerifyForm" type="danger">{{loadingStatus ? '登录中...' : '立即登录' }}</el-button>
+          <el-button
+            class="login-button"
+            :loading="loadingStatus"
+            @click="handleVerifyForm"
+            type="danger"
+            >{{ loadingStatus ? '登录中...' : '立即登录' }}</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -52,7 +72,6 @@ export default {
     this.handleGetCaptcha()
   },
   methods: {
-
     // 调用接口获取验证码
     async handleGetCaptcha() {
       const { captchaImg, token } = await UserApi.getCaptcha()
